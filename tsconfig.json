@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@config": [
+        "src/config.ts"
+      ],
+      "@utils": [
+        "src/modules/utils"
+      ],
+      "@styleGuide": [
+        "src/modules/styleGuide/fe"
+      ],
+      "@layout": [
+        "src/modules/layout/fe"
+      ],
+      "@uiComponents": [
+        "src/modules/uiComponents/fe"
+      ],
+      "@feedbackForm": [
+        "src/modules/feedback/fe"
+      ],
+      "@tasksCountries": [
+        "src/modules/tasksCountries"
+      ],
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "incremental": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types.d.ts"
+  ]
+}
