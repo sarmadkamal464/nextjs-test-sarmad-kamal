@@ -9,13 +9,19 @@ export {
   slugAsStringUndefined,
   replaceAll,
   printJson,
-  wait
-} from './utils'
+  wait,
+} from './utils';
 
-export {ErrorTypes} from './failureEnums'
+export { ErrorTypes } from './failureEnums';
 
-export type {RequireOnlyOne} from './utilsTypes'
+export type { RequireOnlyOne } from './utilsTypes';
 
-
-export {apiResponse, apiResult, ApiResponseStatus, methodsNotAllowedResponse, HttpMethods} from './be/apiResponse'
-export type {IError, IResult} from './be/apiResponse'
+export {
+  apiResponse,
+  apiResult,
+  ApiResponseStatus,
+  methodsNotAllowedResponse,
+  HttpMethods,
+} from './be/apiResponse';
+export { singleCountry } from './utils';
+export type { IError, IResult } from './be/apiResponse';

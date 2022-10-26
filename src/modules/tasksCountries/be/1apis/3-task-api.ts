@@ -11,6 +11,7 @@ import {
   HttpMethods,
   IResult,
   methodsNotAllowedResponse,
+  singleCountry,
 } from '@utils';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { filterCountries } from '../3useCases/2-task-filter';
@@ -27,20 +28,21 @@ export const countriesApi = async (
 
   switch (method) {
     case 'POST': {
-      const singleCountry = getAllCountries().filter(
-        (item) => item.code === req.body.searchTerm
+      return apiResponse(
+        res,
+        ApiResponseStatus.OK,
+        singleCountry(getAllCountries(), req.body.searchTerm),
+        []
       );
-      return apiResponse(res, ApiResponseStatus.OK, singleCountry, []);
     }
 
     case 'GET': {
-      let finalResult: any = [];
-      if (req.query?.searchTerm) {
-        finalResult = filterCountries(getAllCountries(), req.query.searchTerm);
-      } else {
-        finalResult = getAllCountries();
-      }
-      return apiResponse(res, ApiResponseStatus.OK, finalResult, []);
+      return apiResponse(
+        res,
+        ApiResponseStatus.OK,
+        filterCountries(getAllCountries(), req.query?.searchTerm),
+        []
+      );
     }
 
     default:

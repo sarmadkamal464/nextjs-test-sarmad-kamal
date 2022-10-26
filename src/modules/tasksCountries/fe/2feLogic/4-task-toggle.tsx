@@ -15,14 +15,16 @@ export const Toggle = () => {
   useEffect(() => {
     if (isHidden) {
       document.title = 'hidden';
-    } else document.title = 'show';
+    } else {
+      document.title = 'show';
+    }
   }, [isHidden]);
 
   return (
     <div>
       <Button onClick={() => setIsHidden((pre) => !pre)}>Toggle Button</Button>
       <HorizontalLine />
-      <Paragraph>{isHidden ? '' : 'show and hide'}</Paragraph>
+      <Paragraph>{!isHidden && 'show and hide'}</Paragraph>
     </div>
   );
 };

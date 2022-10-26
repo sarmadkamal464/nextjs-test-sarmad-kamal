@@ -50,11 +50,16 @@ export const filterCountries = (
 ): ICountryOverview[] => {
   // your solution goes here
   if (searchTerm) {
-    return countries.filter(
-      (item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.code.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    return countries
+      .filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
+          item.code.toLowerCase().includes(searchTerm.trim().toLowerCase())
+      )
+      .map((item: ICountry) => ({
+        name: item.name,
+        code: item.code,
+      }));
   }
   return countries;
 };
